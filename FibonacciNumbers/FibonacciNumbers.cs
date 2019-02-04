@@ -6,6 +6,8 @@ namespace FibonacciSequence
     {
         public static double Fibonacci(int n)
         {
+            Checker(n);
+
             double root = Math.Sqrt(5);
 
             double fi_plus = (1 + root) / 2;
@@ -18,8 +20,8 @@ namespace FibonacciSequence
         }
 
         public static double FibonacciSum(int n)
-        {
-            if (n < 3) return 1;         
+        {      
+            if (n < 3) return 1;
 
             double one = 1, two = 1, sum = 0;
 
@@ -33,6 +35,14 @@ namespace FibonacciSequence
             }
 
             return sum;
+        }
+
+        private static void Checker(int n)
+        {
+            if (n <= 0)
+            {
+                throw new ArgumentException("Variable must be a positive number");
+            }
         }
     }
 }
