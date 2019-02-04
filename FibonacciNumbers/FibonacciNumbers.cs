@@ -6,6 +6,8 @@ namespace FibonacciSequence
     {
         public static double Fibonacci(int n)
         {
+            Checker(n);
+
             double root = Math.Sqrt(5);
 
             double fi_plus = (1 + root) / 2;
@@ -15,6 +17,14 @@ namespace FibonacciSequence
             double result = (Math.Pow(fi_plus, n) - Math.Pow(fi_minus, n)) / root;
 
             return result;
+        }
+
+        private static void Checker(int n)
+        {
+            if (n <= 0)
+            {
+                throw new ArgumentException("Variable must be a positive number");
+            }
         }
     }
 }
