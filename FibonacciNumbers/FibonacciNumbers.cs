@@ -16,5 +16,23 @@ namespace FibonacciSequence
 
             return result;
         }
+
+        public static double FibonacciSum(int n)
+        {
+            if (n < 3) return 1;         
+
+            double one = 1, two = 1, sum = 0;
+
+            for (int i = 0; i < (n - 2); i++)
+            {
+                sum = one + two;
+
+                one = two;
+
+                two = sum;
+            }
+
+            return sum;
+        }
     }
 }
