@@ -20,7 +20,9 @@ namespace FibonacciSequence
         }
 
         public static double FibonacciSum(int n)
-        {      
+        {
+            Checker(n); 
+
             if (n < 3) return 1;
 
             double one = 1, two = 1, sum = 0;
