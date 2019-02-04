@@ -6,11 +6,20 @@ namespace FibonacciSequence
     {
         public void CalculateNumber()
         {
+            double number = 0;
+
             int position = GetPosition();
 
-            Console.Write("Answer: ");
+            try
+            {
+                number = FibonacciNumbers.Fibonacci(position);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
-            Console.WriteLine(FibonacciNumbers.Fibonacci(position));
+            Console.Write("Answer: {0}", number);
         }
 
         private int GetPosition()
